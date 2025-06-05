@@ -6,6 +6,7 @@ import {
   IconMoodHappy,
   IconTypography,
   IconUserPlus,
+  IconShoppingBag,
 } from "@tabler/icons-react";
 
 import { uniqueId } from "lodash";
@@ -15,12 +16,17 @@ const Menuitems = [
     navlabel: true,
     subheader: "HOME",
   },
-
   {
     id: uniqueId(),
     title: "Dashboard",
     icon: IconLayoutDashboard,
     href: "/",
+  },
+  {
+    id: uniqueId(),
+    title: "Order List",
+    icon: IconShoppingBag,
+    href: "/order-list",
   },
   {
     navlabel: true,
@@ -70,9 +76,6 @@ const Menuitems = [
     icon: IconAperture,
     href: "/sample-page",
   },
-
 ];
 
 export default Menuitems;
-
-
