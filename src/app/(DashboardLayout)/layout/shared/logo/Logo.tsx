@@ -15,8 +15,8 @@ const Logo = () => {
       <Image
         src="/images/logos/Logo-1.png"
         alt="logo"
-        height={70}
-        width={174}
+        height={34}
+        width={137}
         priority
       />
     </LinkStyled>
