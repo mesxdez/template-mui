@@ -8,28 +8,19 @@ import {
   MenuItem,
   Submenu,
 } from "react-mui-sidebar";
-import { IconPoint } from '@tabler/icons-react';
+import { IconPoint } from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Upgrade } from "./Updrade";
-
 
 const renderMenuItems = (items: any, pathDirect: any) => {
-
   return items.map((item: any) => {
-
     const Icon = item.icon ? item.icon : IconPoint;
 
     const itemIcon = <Icon stroke={1.5} size="1.3rem" />;
 
     if (item.subheader) {
       // Display Subheader
-      return (
-        <Menu
-          subHeading={item.subheader}
-          key={item.subheader}
-        />
-      );
+      return <Menu subHeading={item.subheader} key={item.subheader} />;
     }
 
     //If the item has children (submenu)
@@ -39,7 +30,7 @@ const renderMenuItems = (items: any, pathDirect: any) => {
           key={item.id}
           title={item.title}
           icon={itemIcon}
-          borderRadius='7px'
+          borderRadius="7px"
         >
           {renderMenuItems(item.children, pathDirect)}
         </Submenu>
@@ -53,36 +44,37 @@ const renderMenuItems = (items: any, pathDirect: any) => {
         <MenuItem
           key={item.id}
           isSelected={pathDirect === item?.href}
-          borderRadius='8px'
+          borderRadius="8px"
           icon={itemIcon}
           link={item.href}
           component={Link}
         >
           {item.title}
-        </MenuItem >
+        </MenuItem>
       </Box>
-
     );
   });
 };
-
 
 const SidebarItems = () => {
   const pathname = usePathname();
   const pathDirect = pathname;
 
   return (
-    < >
-      <MUI_Sidebar width={"100%"} showProfile={false} themeColor={"#5D87FF"} themeSecondaryColor={'#49beff'} >
-
-        <Logo img='/images/logos/dark-logo.svg' component={Link} to="/" >Modernize</Logo>
+    <>
+      <MUI_Sidebar
+        width={"100%"}
+        showProfile={false}
+        themeColor={"#5D87FF"}
+        themeSecondaryColor={"#49beff"}
+      >
+        <Logo img="/images/logos/Logo-1.png" component={Link} to="/">
+          FINSIGHT
+        </Logo>
 
         {renderMenuItems(Menuitems, pathDirect)}
-        <Box px={2}>
-          <Upgrade />
-        </Box>
+        <Box px={2}></Box>
       </MUI_Sidebar>
-
     </>
   );
 };
