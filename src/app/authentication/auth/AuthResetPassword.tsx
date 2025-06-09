@@ -20,7 +20,7 @@ const AuthResetPassword = ({ subtext, subtitle }: Props) => {
 
     try {
       setError("");
-      // ✅ ส่งคำขอ reset ไปยัง backend หรือ API จริงของคุณ
+      // ✅ ส่งคำขอ reset ไปยัง backend หรือ API
       // ตัวอย่างจำลอง:
       await new Promise((res) => setTimeout(res, 1000));
       // สมมติว่าทำสำเร็จ:
