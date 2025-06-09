@@ -150,8 +150,8 @@ const pageLinks = [
     title: 'Authentication Design'
   },
   {
-    href: '/auth/register',
-    title: 'Register Now'
+    href: '/auth/reset-password',
+    title: 'Reset Password'
   },
   {
     href: '/404',
